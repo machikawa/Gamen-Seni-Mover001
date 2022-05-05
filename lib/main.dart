@@ -1,6 +1,7 @@
 /* 3-1. ボタン */
 
 import 'package:flutter/material.dart';
+import 'package:scmover/third_page.dart';
 import 'next_page.dart';
 
 void main() => runApp(MyApp());
@@ -60,6 +61,16 @@ class _CounterState extends State<Counter> {
 
   }
 
+  void _thirdButtonPressed() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+          builder: (context) =>
+              ThirdPage()
+      )
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -98,6 +109,19 @@ class _CounterState extends State<Counter> {
               style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.black)),
               child: Text(
                 "画面遷移じゃ",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 15,
+                ),
+              ),
+            ),
+
+            TextButton(
+              onPressed: _thirdButtonPressed ,
+              // テキストボタンのカラー付はかくもめんどい。
+              style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.black)),
+              child: Text(
+                "画面遷移2じゃ!!",
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 15,

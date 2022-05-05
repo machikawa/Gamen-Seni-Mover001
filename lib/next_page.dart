@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'third_page.dart';
 
 class NextPage extends StatefulWidget {
 
@@ -46,7 +47,24 @@ class _NextPageState extends State<NextPage> {
                   ),
                 ),
               ),
-
+              TextButton(
+                onPressed: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            ThirdPage()
+                    ),
+                ) ,
+                // テキストボタンのカラー付はかくもめんどい。
+                style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.black)),
+                child: Text(
+                  "次や",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 30,
+                  ),
+                ),
+              ),
             ],
           ),
         ),
